@@ -1,0 +1,45 @@
+optimizer : {
+  type: AdamW,
+  kwargs: {
+  lr : 0.0001,
+  weight_decay : 0.05
+}}
+
+scheduler: {
+  type: CosLR,
+  kwargs: {
+    epochs: 300,
+    initial_epochs : 10,
+}}
+
+dataset : {
+  train : { _base_: cfgs/dataset_configs/Dataset.yaml,
+            others: {subset: 'train', npoints: 1024,
+            valid_tasks: ['reconstruction', 'denoising', 'registration', 'partsegmentation']}},
+  test : { _base_: cfgs/dataset_configs/Dataset.yaml,
+            others: {subset: 'test', npoints: 1024,
+            valid_tasks: ['reconstruction', 'denoising', 'registration', 'partsegmentation']}},
+}
+
+model : {
+  NAME: DeformPIC,
+  group_size: 32,
+  num_group: 64,
+  loss: cdl2,
+  dtn_config: {
+    trans_dim: 384,
+    depth: 8,
+    num_heads: 6,
+  },
+  den_config: {
+    embed_dim: 384,
+    depth: 4,
+    num_heads: 6,
+    drop_path_rate: 0.1,
+  },
+}
+
+npoints: 1024
+total_bs : 128
+step_per_update : 1
+max_epoch : 300
