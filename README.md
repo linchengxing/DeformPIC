@@ -61,7 +61,7 @@ pip install swanlab
 ### ShapeNet In-Context
 Please refer to [PIC repo](https://github.com/fanglaosi/Point-In-Context). And download the pre-processed data.
 ### ModelNet40 In-Context
-Please download `modelnet40_test_8192pts_fps.dat` (You can find the dataset in the [Point-BERT repo](https://github.com/Julie-tang00/Point-BERT/blob/master/DATASET.md)) to the path `data/ModelNet`.
+Please download `modelnet40_normal_resampled/modelnet40_test_8192pts_fps.dat` (You can find the dataset in the [Point-BERT repo](https://github.com/Julie-tang00/Point-BERT/blob/master/DATASET.md)) to the path `data/ModelNet`.
 And run:
 
 ```shell
