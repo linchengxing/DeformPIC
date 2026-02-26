@@ -76,13 +76,18 @@ python data/ScanObjectNN/gen_dataset_cd.py
 ```
 
 ## 3. Training DeformPIC
+
 To train DeformPIC on ShapeNet In-Context, run the following command:
 ```shell
 bash scripts/train.sh <GPU>
 ```
 
 ## 4. Evaluation
+
+We provide the 
+
 To evaluate the performance of **Part Segmentation task** on **ShapeNet In-Context**, enter the parameters in the `eval_seg.sh` file, run the following command:
+
 ```shell
 bash scipts/eval_seg.sh <GPU>
 ```
@@ -98,6 +103,12 @@ To evaluate the performance of **Reconstruction, Denoising, Registration** tasks
 ```shell
 bash scipts/eval_cd_scan_hardest.sh <GPU>
 ```
+
+# Released Models
+
+| Model     | Rec. CD | Den. CD | Reg. CD | Seg. | Download                                                     |
+| --------- | ------- | ------- | ------- | ---- | ------------------------------------------------------------ |
+| DeformPIC | 2.7     | 3.5     | 2.0     | 83.9 | [here](https://drive.google.com/file/d/171ezw9s4B60ZKvIaA4Tq3x_9y8uig5hf/view?usp=drive_link) |
 
 # License
 
